@@ -1,6 +1,6 @@
 package fdafrequentflyer;
 
-public class Membership()
+public class Membership
 {
     private int id;
     private static int counter;
