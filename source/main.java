@@ -1,7 +1,10 @@
 package source;
 
-public static void main(String[] args)
+public class Main
 {
-    FrequentFlyerController controller = new FrequentFlyerController();
-    controller.displayMemberships();
+    public static void main(String[] args)
+    {
+        FrequentFlyerController controller = new FrequentFlyerController();
+        controller.displayMemberships();
+    }
 }
