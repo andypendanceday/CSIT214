@@ -39,7 +39,7 @@ public class Membership
         user.setEmail(email);
     }
 
-    public void getPoints()
+    public int getPoints()
     {
         return points;
     }
