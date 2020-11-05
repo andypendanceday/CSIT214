@@ -88,4 +88,9 @@ public class Membership
     {
         this.fee = fee;
     }
+
+    public String toString()
+    {
+        return String.format("User ID: %s \n Name: %s %s \n Email: %s \n Membership Type: %s \n Points: %s", id, user.getFirstName(), user.getLastName(), email, type.toString(), points);
+    }
 }
