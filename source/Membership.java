@@ -7,6 +7,8 @@ public class Membership
     private User user;
     private String email;
     private int points;
+    private MembershipType type;
+    private double fee;
     
     //Email from user registration is kept in this class as user credential
     public Membership(User user)
@@ -47,5 +49,43 @@ public class Membership
     public void setPoints(int points)
     {
         this.points = points;
+    }
+
+    public int addPoints(int newPoints)
+    {
+        this.points += newPoints;
+    }
+
+    public MembershipType getType()
+    {
+        return type;
+    }
+
+    //Membership Type dictates fee cost and bonus sign-up points
+    public void setType(MembershipType type)
+    {
+        this.type = type;
+
+        switch(type) {
+            case BASIC:
+                setFee(100.00);
+                addPoints(5000);
+                break;
+
+            case EXCLUSIVE:
+                setFee(200.00);
+                addPoints(8000);
+                break;
+        }
+    }
+
+    public double getFee()
+    {
+        return fee;
+    }
+
+    public void setFee(double fee)
+    {
+        this.fee = fee;
     }
 }

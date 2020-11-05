@@ -16,6 +16,8 @@ public class FrequentFlyerController
         this.view = new FrequentFlyerView();
         this.users = new ArrayList<User>();
         this.memberships = new ArrayList<Membership>();
+        createMemberships();
+        setTypes();
     }
 
     protected void getUsersFromFile()
@@ -42,6 +44,31 @@ public class FrequentFlyerController
         for(User u : users)
         {
             memberships.add(Membership(u));
+        }
+    }
+
+    public void displayMemberships()
+    {
+        view.displayMemberships();
+    }
+
+    //Method for demonstration purposes - in practice user would enter desired type at sign-up
+    public void setTypes()
+    {
+        int i = 0;
+
+        for(Membership m : memberships)
+        {
+            if(i < 2)
+            {
+                m.setType(MembershipType.BASIC);
+            }
+            else
+            {
+                m.setType(MembershipType.EXCLUSIVE);
+            }
+
+            i++;
         }
     }
 }
