@@ -51,7 +51,7 @@ public class Membership
         this.points = points;
     }
 
-    public int addPoints(int newPoints)
+    public void addPoints(int newPoints)
     {
         this.points += newPoints;
     }
