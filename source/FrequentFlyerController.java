@@ -82,7 +82,7 @@ public class FrequentFlyerController
 
     public void demonstrate()
     {
-        System.out.println("Demonstration of point loss/gain")
+        System.out.println("Demonstration of point loss/gain");
         memberships.get(0).spendPoints(1560);
         memberships.get(1).addPoints(3470);
         memberships.get(2).spendPoints(450);
