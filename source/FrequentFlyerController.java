@@ -1,8 +1,9 @@
-package fdafrequentflyer;
+package source;
 
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class FrequentFlyerController
@@ -11,7 +12,7 @@ public class FrequentFlyerController
     private ArrayList<User> users;
     private ArrayList<Membership> memberships;
 
-    public FrequentFlyerController()
+    public FrequentFlyerController() throws IOException
     {
         this.view = new FrequentFlyerView();
         this.users = new ArrayList<User>();
@@ -20,7 +21,7 @@ public class FrequentFlyerController
         setTypes();
     }
 
-    protected void getUsersFromFile()
+    protected void getUsersFromFile() throws IOException
     {
         File file = new File("registration.txt");
         Scanner scan = new Scanner(file);
@@ -32,24 +33,24 @@ public class FrequentFlyerController
             String dob = scan.nextLine();
             String address = scan.nextLine();
             String email = scan.nextLine();
-            users.add(User(firstName, lastName, dob, address, email));
+            users.add(new User(firstName, lastName, dob, address, email));
         }
 
         scan.close();
     }
 
-    public void createMemberships()
+    public void createMemberships() throws IOException
     {
         getUsersFromFile();
         for(User u : users)
         {
-            memberships.add(Membership(u));
+            memberships.add(new Membership(u));
         }
     }
 
     public void displayMemberships()
     {
-        view.displayMemberships();
+        view.displayMemberships(memberships);
     }
 
     //Method for demonstration purposes - in practice user would enter desired type at sign-up

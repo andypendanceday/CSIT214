@@ -1,4 +1,4 @@
-package fdafrequentflyer;
+package source;
 
 public class User
 {
