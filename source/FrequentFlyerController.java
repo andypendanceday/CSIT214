@@ -84,5 +84,6 @@ public class FrequentFlyerController
         memberships.get(1).addPoints(3470);
         memberships.get(2).spendPoints(450);
         memberships.get(3).addPoints(10000);
+        displayMemberships();
     }
 }
