@@ -6,13 +6,15 @@ public class Membership
     private static int counter;
     private User user;
     private String email;
-
+    private int points;
+    
     //Email from user registration is kept in this class as user credential
     public Membership(User user)
     {
         this.id = counter++;
         this.user = user;
         this.email = user.getEmail();
+        this.points = 0;
     }
 
     public int getID()
@@ -35,5 +37,15 @@ public class Membership
     {
         this.email = email;
         user.setEmail(email);
+    }
+
+    public void getPoints()
+    {
+        return points;
+    }
+
+    public void setPoints(int points)
+    {
+        this.points = points;
     }
 }
