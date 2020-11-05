@@ -23,12 +23,14 @@ public class FrequentFlyerController
     //Had issues with io.File - my java is rusty, implementation was only for demonstration anyway
     protected void getUsersFromFile() throws IOException
     {
+        
         users.add(new User("Justin", "Timberlake", "20/05/1997", "12 Crymeriver St, Wollongong", "jtnoodlehair@gmail.com"));
         users.add(new User("Jayden", "Fish", "17/09/1990", "24 Curtis Lane, St Marys", "fishy@gmail.com"));
         users.add(new User("Andrew", "Andre", "09/09/1997", "3 Church Hill Rd, Lethbridge Park", "andyande@gmail.com"));
         users.add(new User("Levi", "Ackerman", "04/07/1985", "13 Wallmaria Ave, Sydney", "scoutreg@gmail.com"));
         /*
-        File file = new File("registration.txt");
+        String fileName = "CSIT214-2\source\registration.txt";
+        File file = new File(fileName);
         Scanner scan = new Scanner(file);
 
         if(scan.hasNext() == true)
@@ -80,6 +82,7 @@ public class FrequentFlyerController
 
     public void demonstrate()
     {
+        System.out.println("Demonstration of point loss/gain")
         memberships.get(0).spendPoints(1560);
         memberships.get(1).addPoints(3470);
         memberships.get(2).spendPoints(450);
