@@ -8,5 +8,6 @@ public class Main
     {
         FrequentFlyerController controller = new FrequentFlyerController();
         controller.displayMemberships();
+        controller.demonstrate();
     }
 }

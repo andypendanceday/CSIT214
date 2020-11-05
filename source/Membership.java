@@ -56,6 +56,11 @@ public class Membership
         this.points += newPoints;
     }
 
+    public void spendPoints(int lessPoints)
+    {
+        this.points -= lessPoints;
+    }
+
     public MembershipType getType()
     {
         return type;
